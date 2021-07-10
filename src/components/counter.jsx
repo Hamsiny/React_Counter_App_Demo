@@ -16,10 +16,15 @@ export class Counter extends Component {
         this.setState({ count: this.state.count + 1 });
     }
 
-    render() {
+    handleDecrement = () => {
+        this.setState(() => this.state.count -= 1);
+    }
 
+    render() {
+        // in onclick event use arrow function to parse in parameter
         return (
             <div>
+                <button onClick={this.handleDecrement} className='btn btn-secondary btn-sm'>Decrement</button>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button onClick={this.handleIncrement} className='btn btn-secondary btn-sm'>Increment</button>
                 <ul>
