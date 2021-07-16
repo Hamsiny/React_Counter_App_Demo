@@ -23,6 +23,7 @@ export class Counter extends Component {
         // in onclick event use arrow function to parse in parameter
         return (
             <div>
+                {this.props.children}
                 <button onClick={this.handleDecrement} className='btn btn-secondary btn-sm'>Decrement</button>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button onClick={this.handleIncrement} className='btn btn-secondary btn-sm'>Increment</button>
